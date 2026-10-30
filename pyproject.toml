@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "order-confirmation-sap-automation"
+version = "0.1.0"
+description = "Portfolio implementation for extracting and validating supplier order confirmations with a configurable SAP GUI adapter."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+py-modules = ["extract_order_confirmations", "sap_upload_from_excel"]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
